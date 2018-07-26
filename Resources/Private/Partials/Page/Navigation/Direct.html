@@ -1,0 +1,76 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+            <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+				<span class="sr-only">Toggle navigation</span>
+               <span aria-hidden="true" class="glyphicon glyphicon-menu-left"></span>
+				<span>{nomDirectNav}</span>
+            </button>
+		<!-- Sidebar -->
+		<f:if condition="{directnavigation}">
+			<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+				<ul class="nav sidebar-nav">
+					<li class="sidebar-brand">
+						  {nomDirectNav}
+					</li>
+					<f:for each="{directnavigation}" as="directnavigationItem">
+						<f:if condition="{directnavigationItem.spacer}">
+							<f:then>
+								</ul>
+								<ul class="nav sidebar-nav">
+							</f:then>
+							<f:else>
+								<li class="{f:if(condition: directnavigationItem.active, then:'active')} {f:if(condition: directnavigationItem.children, then:'dropdown dropdown-hover')}">
+									<f:if condition="{directnavigationItem.children}">
+										<f:then>
+											<a href="{directnavigationItem.link}"{f:if(condition: directnavigationItem.target, then: ' target="{directnavigationItem.target}"')} title="{directnavigationItem.title}" class="dropdown-link">
+												<f:if condition="{directnavigationItem.icon}">
+													<span class="navbar-item-icon">
+														<f:image image="{directnavigationItem.icon.0}" alt="{directnavigationItem.icon.0.alternative}" title="{directnavigationItem.icon.0.title}" width="{settings.navigation.icon.width}" height="{settings.navigation.icon.height}" />
+													</span>
+												</f:if>
+												<span class="navbar-item-text">{directnavigationItem.title}</span>
+												<b class="caret"></b>
+												<span class="bar"></span>
+											</a>
+											<ul class="dropdown-menu" role="menu">
+												<f:for each="{directnavigationItem.children}" as="child">
+													<f:if condition="{child.spacer}">
+														<f:then>
+															<li class="dropdown-header">{child.title}</li>
+														</f:then>
+														<f:else>
+															<li class="{f:if(condition: child.active, then:'active')}">
+																<a href="{child.link}"{f:if(condition: child.target, then: ' target="{child.target}"')} title="{child.title}">
+																	<f:if condition="{child.icon}">
+																		<span class="navbar-item-icon">
+																			<f:image image="{child.icon.0}" alt="{child.icon.0.alternative}" title="{child.icon.0.title}" width="{settings.navigation.icon.width}" height="{settings.navigation.icon.height}" />
+																		</span>
+																	</f:if>
+																	<span class="navbar-item-text">{child.title}</span>
+																</a>
+															</li>
+														</f:else>
+													</f:if>
+												</f:for>
+											</ul>
+										</f:then>
+										<f:else>
+											<a href="{directnavigationItem.link}"{f:if(condition: directnavigationItem.target, then: ' target="{directnavigationItem.target}"')} title="{directnavigationItem.title}">
+												<f:if condition="{directnavigationItem.icon}">
+													<span class="navbar-item-icon">
+														<f:image image="{directnavigationItem.icon.0}" alt="{directnavigationItem.icon.0.alternative}" title="{directnavigationItem.icon.0.title}" width="{settings.navigation.icon.width}" height="{settings.navigation.icon.height}" />
+													</span>
+												</f:if>
+												<span class="navbar-item-text">{directnavigationItem.title}</span>
+												<span class="bar"></span>
+											</a>
+										</f:else>
+									</f:if>
+								</li>
+							</f:else>
+						</f:if>
+					</f:for>					
+				</ul>
+			</nav>
+		</f:if>
+        <!-- /#sidebar-wrapper -->
+</html>

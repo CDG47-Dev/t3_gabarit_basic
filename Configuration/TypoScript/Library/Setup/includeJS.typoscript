@@ -1,0 +1,17 @@
+page{
+	includeJSLibs {
+
+    }
+	
+    includeJS {
+
+    }
+
+    includeJSFooterlibs {
+
+    }
+	
+	includeJSFooter {
+		addon = EXT:t3_gabarit_basic/Resources/Public/Js/addon.js	
+	}
+}

@@ -1,0 +1,117 @@
+# ==============================================
+# FE-Plugin configuration for EXT:news
+# ==============================================
+plugin.tx_news {
+	# ====================================
+	# FE-Plugin settings
+	# ====================================
+    view {
+        templateRootPaths > 
+        templateRootPaths {
+            0 = EXT:news/Resources/Private/Templates/
+            1 = EXT:t3_gabarit_basic/Resources/Private/Templates/News/
+            2 = {$plugin.tx_news.view.templateRootPath}
+        }
+        partialRootPaths >
+        partialRootPaths {
+            0 = EXT:news/Resources/Private/Partials/
+            1 = EXT:t3_gabarit_basic/Resources/Private/Partials/News/
+            2 = {$plugin.tx_news.view.partialRootPath}
+        }
+        layoutRootPaths >
+        layoutRootPaths {
+            0 = EXT:news/Resources/Private/Layouts/
+            1 = EXT:t3_gabarit_basic/Resources/Private/Layouts/News/
+            2 = {$plugin.tx_news.view.layoutRootPath}
+        }
+	}
+	# ====================================
+	# Settings available inside Controller and View by accessing $this->settings or {settings.xyz}
+	# ====================================
+	settings {
+	
+		defaultDetailPid = {$themes.configuration.features.newsDefaultDetailPid}
+		
+		facebookLocale = fr_FR
+		
+		list{
+		
+			media{
+				dummyImage = EXT:t3_gabarit_basic/Resources/Public/Extension/News/Images/no_image.png
+				image{
+					maxHeight = 234
+				}
+			}
+		}
+		
+		card.cropMaxCharacters = 200
+		
+		simpleList.cropMaxCharacters = 280
+		
+		detail{
+		
+			showPrevNext = 1
+			
+			# show a file type icon above the file name
+			showRelatedFileIcon = 0
+			
+			shariff < tt_content.list.20.rxshariff_shariff.settings
+			shariff {
+				# If extension rx_shariff is loaded, define services here for news detail page
+				# twitter,facebook,googleplus,linkedin,xing,pinterest,whatsapp,mail,addthis,tumblr,flattr,diaspora,reddit,stumbleupon,threema,info
+				services = facebook,twitter
+			}
+			media {
+			 image {
+					 maxWidth = 320
+					 maxHeight =
+
+					 lightbox {
+							enabled = 1
+							class = {$plugin.bootstrap_package_contentelements.lightbox.cssClass}
+							prefix = {$plugin.bootstrap_package_contentelements.lightbox.prefix}
+							width = 1024
+							height = 768
+					 }
+
+
+					 video {
+							 width = 282
+							 height = 300
+					 }
+			}
+		}
+	}
+   }
+}
+
+# =====================================================================================
+# BreadcrumbExtendedValue And OpenGraph Title configuration for EXT:bootstrap_package
+# BreadcrumbExtendedValue should be used to display the title of a
+# single record. 
+# =====================================================================================
+[globalVar = GP:tx_news_pi1|news > 0]
+page {
+    10 {
+        variables {
+            breadcrumbExtendedValue = TEXT
+            breadcrumbExtendedValue {
+                dataWrap = DB:tx_news_domain_model_news:{GP:tx_news_pi1|news}:title
+                wrap3 = {|}
+                insertData = 1
+            }
+        }
+        settings {
+            breadcrumb {
+                extended = 1
+            }
+        }		
+    }
+	meta {
+		og:title  {
+		attribute = property
+		field = DB:tx_news_domain_model_news:{GP:tx_news_pi1|news}:title
+		}
+	}	
+}
+[global]

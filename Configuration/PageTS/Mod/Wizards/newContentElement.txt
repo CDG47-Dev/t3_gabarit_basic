@@ -1,0 +1,29 @@
+#####################
+#### INTERACTIVE ####
+#####################
+
+###############
+#### MENUS ####
+###############
+mod.wizards.newContentElement.wizardItems {
+    menu.elements {
+        menu_icon_list {
+            iconIdentifier = content-menu-thumbnail
+            title = menu icon list
+            description = description
+            tt_content_defValues {
+                CType = menu_icon_list
+            }
+        }
+        menu_icon_dir {
+            iconIdentifier = content-menu-thumbnail
+            title = menu icon dir
+            description = description
+            tt_content_defValues {
+                CType = menu_icon_dir
+            }
+        }
+    }
+    menu.show := addToList(menu_icon_list)
+    menu.show := addToList(menu_icon_dir)
+}

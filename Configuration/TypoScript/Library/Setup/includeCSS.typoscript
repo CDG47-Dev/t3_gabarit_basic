@@ -1,0 +1,14 @@
+page{
+	includeCSSLibs {
+        googlewebfontlogo = https://fonts.googleapis.com/css?family={$plugin.bootstrap_package.settings.less.google-webfont-logo}:{$plugin.bootstrap_package.settings.less.google-webfont-logo-weight}
+        googlewebfontlogo {
+            external = 1
+            disableCompression = 1
+            excludeFromConcatenation = 1
+        }
+	}	
+	
+	includeCSS {
+		gabarit = EXT:t3_gabarit_basic/Resources/Public/Less/gabarit.less		
+	}
+}

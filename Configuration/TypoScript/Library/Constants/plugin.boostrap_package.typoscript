@@ -1,0 +1,29 @@
+##########################################
+### BOOTSTRAP PACKAGE CONTENT ELEMENTS ###
+##########################################
+plugin.bootstrap_package_contentelements {
+	view{
+	   # cat=t3 gabarit_basic: advanced/140/templateRootPath; type=string; label=Template Root Path: Path to templates
+	   templateRootPath = EXT:t3_gabarit_basic/Resources/Private/Templates/ContentElements/
+	   # cat=t3 gabarit_basic: advanced/140/layoutRootPath; type=string; label=Layout Root Path: Path to layouts
+	   layoutRootPath = EXT:t3_gabarit_basic/Resources/Private/Layouts/ContentElements/
+	   # cat=t3 gabarit_basic: advanced/140/partialRootPath; type=string; label=Partial Root Path: Path to partials	   
+	   partialRootPath  = EXT:t3_gabarit_basic/Resources/Private/Partials/ContentElements/
+	}
+	menu_icon {
+        media {
+            # cat=t3 gabarit_basic: advanced/143/102; type=string; label=Icon Menu Media Height
+            height = 80
+            # cat=t3 gabarit_basic: advanced/143/103; type=string; label=Icon Menu Media Width
+            width = 80
+        }
+        title {
+            # cat=t3 gabarit_basic: advanced/143/104; type=string; label=Icon Menu Crop Title
+            crop = 100
+        }
+        abstract {
+            # cat=t3 gabarit_basic: advanced/143/105; type=string; label=Icon Menu Crop Abstract
+            crop = 250
+        }
+	}
+}

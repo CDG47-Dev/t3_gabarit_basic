@@ -1,0 +1,74 @@
+##############
+#### PAGE ####
+##############
+
+page = PAGE
+page{
+
+    10 = FLUIDTEMPLATE
+    10 {
+
+	        ################
+	        ### SETTINGS ###
+	        ################
+	        settings {
+				responsive {
+						file = {$themes.configuration.responsive.file}
+						height = {$themes.configuration.responsive.height}
+						width = {$themes.configuration.responsive.width}
+						alt = {$themes.configuration.responsive.alt}
+				}
+				logo {
+					collectivite = {$themes.configuration.logo.collectivite}
+				}
+				analytics.id = {$themes.configuration.analytics.id}
+			}
+			##########################
+			### DATA PREPROCESSING ###
+			##########################
+			dataProcessing {
+				4701 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+				4701 {
+					special = directory
+					special.value = {$themes.configuration.directnav.navdir}
+					includeNotInMenu = {$themes.configuration.directnav.notinmenu}
+					excludeUidList = {$themes.configuration.directnav.excludelist}			
+					includeSpacer = 1
+					as = directnavigation
+					dataProcessing {
+						10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+						10 {
+							references.fieldName = nav_icon
+							as = icon
+						}
+					}
+				}
+			}	
+			#################
+			### VARIABLES ###
+			#################
+			variables {
+				#Menu Accès direct
+				nomDirectNav = TEXT
+				nomDirectNav.value = {$themes.configuration.directnav.name}	 
+			}			
+	}
+	 
+	templateRootPath{
+		0 = EXT:bootstrap_package/Resources/Private/Templates/Page/
+		1 = EXT:t3_gabarit_basic/Resources/Private/Templates/Page/
+		2 = {$page.fluidtemplate.templateRootPath}
+	}
+     	layoutRootPath{
+		0 = EXT:bootstrap_package/Resources/Private/Layouts/Page/
+		1 = EXT:t3_gabarit_basic/Resources/Private/Layouts/Page/
+		2 = {$page.fluidtemplate.layoutRootPath}		
+	}
+	
+    	partialRootPath{
+		0 = EXT:bootstrap_package/Resources/Private/Partials/Page/
+		1 = EXT:t3_gabarit_basic/Resources/Private/Partials/Page/
+		2 = {$page.fluidtemplate.partialRootPath}
+	}
+
+}	

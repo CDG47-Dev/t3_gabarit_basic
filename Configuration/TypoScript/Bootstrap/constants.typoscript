@@ -1,0 +1,93 @@
+plugin.bootstrap_package {
+    settings {
+        less {
+            	###
+            	### DEFAULT FONT SIZE - Use font size default in navigator parameters
+				###
+              	
+				# cat=bootstrap package: basic/160/100; type=options[Lora=Lora, Merriweather=Merriweather, Raleway=Raleway, Roboto=Roboto, Source Sans Pro=Source Sans Pro, Ubuntu=Ubuntu]; label=Google Webfont Logo
+				google-webfont-logo = Merriweather
+				# cat=bootstrap package: basic/160/101; type=string; label=Google Webfont Logo Weights: Comma separated list of font weights
+				google-webfont-logo-weight = 300,400,700				
+				
+				# cat=bootstrap package: styling/302/font-size-base; type=string; label=@font-size-base:
+				font-size-base = 1em
+
+				# cat=bootstrap package: styling/333/carousel-control-font-size; type=string; label=@carousel-control-font-size:
+				carousel-control-font-size = 1.250em
+
+				# cat=bootstrap package: styling/313/navbar-height; type=string; label=@navbar-height:
+				navbar-height = 0
+				
+				###
+				### CUSTOM VARIABLES START
+				###
+				# cat=t3 gabarit_basic: basic/160/100; type=options[Lora=Lora, Merriweather=Merriweather, Raleway=Raleway, Roboto=Roboto, Source Sans Pro=Source Sans Pro, Ubuntu=Ubuntu]; label=Google Webfont
+				google-webfont = Roboto		
+				
+				# cat=t3 gabarit_basic: styling/300/brand-primary; type=string; label=@brand-primary:
+				brand-primary = #677CB3	
+
+				# cat=t3 gabarit_basic: styling/306/btn-primary-bg; type=string; label=@btn-primary-bg:
+				btn-primary-bg = @brand-primary				
+
+				# cat=t3 gabarit_basic: basic/110/200; type=string; label=Background Bandeau: image d'arrière plan sous le logo, laisser vide pour aucune image
+				background-bandeau = "/typo3conf/ext/t3_gabarit_basic/Resources/Public/Images/bandeau.jpg"	
+				
+				# cat=t3 gabarit_basic: basic/110/300; type=string; label=Couleur arrière plan Bandeau: couleur d'arrière plan sous le logo
+				background-bandeau-color = #FFF		
+				
+				# cat=t3 gabarit_basic: basic/110/400; type=string; label=Background Taille: taille image d'arrière plan sous le logo
+				background-size = 100%	
+
+				# cat=t3 gabarit_basic: basic/110/500; type=string; label=Couleur du texte Logo
+				titleColor = #CCC	
+
+				# cat=t3 gabarit_basic: styling/300/brand-primary; type=string; label=Couleur du texte Logo au survol
+				titleColorHover = #333	
+							
+				# cat=t3 gabarit_basic: styling/301/link-color; type=string; label=@link-color: Global textual link color.
+				link-color = #42568b
+				
+				# cat=t3 gabarit_basic: styling/301/dropdown-bg-color; type=string; label=@dropdown-bg-color: DropDown Background Color.
+				dropdown-bg-color = #42568b	
+
+				# cat=t3 gabarit_basic: styling/301/dropdown-border-color; type=string; label=@dropdown-bg-color: DropDown Border Color.
+				dropdown-border-color = #42568b						
+				
+				# cat=t3 gabarit_basic: styling/301/link-footer-color; type=string; label=@link-footer-color: Global textual link footer color.
+				link-footer-color = #fff
+
+				# cat=t3 gabarit_basic: styling/301/link-footer-hover-color; type=string; label=@link-footer-hover-color: Global textual link footer hover color.
+				link-footer-hover-color = #fff					
+				
+				# cat=t3 gabarit_basic: styling/301/header1-color; type=string; label=Entête 1 (h1): Couleur entête 1
+				header1-color = #897e63
+				
+				# cat=t3 gabarit_basic: styling/301/header2-color; type=string; label=Entête 2 (h2): Couleur entête 2
+				header2-color = #724F18				
+				
+				# cat=t3 gabarit_basic: styling/313/navbar-default-color; type=string; label=@navbar-default-color:
+				navbar-default-color = #fff
+				
+				# cat=t3 gabarit_basic: styling/313/navbar-hover-color; type=string; label=@navbar-hover-color:
+				navbar-hover-color = #201f24
+
+				# cat=t3 gabarit_basic: styling/313/navbar-hover-bg; type=string; label=@navbar-hover-bg:
+				navbar-hover-bg = #201f24					
+
+				# cat=t3 gabarit_basic: styling/313/navbar-default-bg; type=string; label=@navbar-default-bg:
+				navbar-default-bg = #b2a78b				
+				
+				# cat=t3 gabarit_basic: styling/313/filter-navbar-item-icon;; type=string; label=Filtre couleur Navbar Icône: filtre de couleur pour changer la couleur des icônes du menu (noir vers blanc par défaut)
+				filter-navbar-item-icon = invert(100%)
+
+				# cat=t3 gabarit_basic: styling/301/unclic-bg-color; type=string; label=@unclic-bg-color: Background div 'En1Clic'.
+				unclic-bg-color = @link-color
+				
+				# cat=t3 gabarit_basic: styling/301/hamburger-bg-color; type=string; label=@hamburger-bg-color: Background Bouton Accès Direct.
+				hamburger-bg-color = @brand-primary
+				
+        }
+    }
+}

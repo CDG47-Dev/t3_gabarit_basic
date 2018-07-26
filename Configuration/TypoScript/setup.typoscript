@@ -1,0 +1,59 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/setup.typoscript">
+
+#### HELPER ####
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/TypoScript/Helper/ContentElement.typoscript">
+
+#### BOOTSTRAP PACKAGE CONTENT ELEMENT RENDERING
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/TypoScript/ContentElement/MenuIconList.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/TypoScript/ContentElement/MenuIconDir.typoscript">
+
+
+
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:t3_gabarit_basic/Configuration/TypoScript/Library/Setup/" extensions="typoscript">
+
+
+
+# Extensions:
+#### News
+[userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('news')]
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/TypoScript/Extension/News/setup.typoscript">
+#### News
+
+#### Solr
+[userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('solr')]
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/TypoScript/Extension/Solr/setup.typoscript">
+# Put index queue modifications here, wont work with INCLUDE_TYPOSCRIPT from scheduler task indexer
+plugin.tx_solr.index.queue.news.fields.url.typolink.parameter = 42
+# {$themes.configuration.features.newsDefaultDetailPid}
+#### Solr
+
+#### cs_seo
+[userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('cs_seo')]
+    <INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/TypoScript/Extension/cs_seo/setup.typoscript">
+[global]
+#### cs_seo
+
+#### rx_shariff
+[userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('rx_shariff')]
+    <INCLUDE_TYPOSCRIPT: source="FILE:EXT:rx_shariff/Configuration/TypoScript/WithoutJQueryAndFontawesome/setup.txt">
+    <INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/TypoScript/Extension/Rx_Shariff/setup.typoscript">
+[global]
+#### rx_shariff
+	
+#### Google Site Map
+[userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('ddgooglesitemap')]
+tx_ddgooglesitemap.forceStartPid = {$themes.configuration.pages.startsite}
+[global]
+#### Google Site Map
+
+#### t3 Weather
+[userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('t3_weather')]
+	<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/TypoScript/Extension/t3_Weather/setup.typoscript">
+[global]
+#### t3 Weather
+
+# Include typoscript files from fileadmin/Configuration/TypoScript
+#<INCLUDE_TYPOSCRIPT: source="DIR:fileadmin/Configuration/TypoScript/" extensions="typoscript">

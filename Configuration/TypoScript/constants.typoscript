@@ -1,0 +1,38 @@
+############################
+### CUSTOM SUBCATEGORIES ###
+###########################
+# customsubcategory=310=Menu Accès Direct
+
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/constants.typoscript">
+
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:t3_gabarit_basic/Configuration/TypoScript/Library/Constants/" extensions="typoscript">
+
+##################################
+#### BOOTSTRAP LESS CONSTANTS ####
+##################################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/TypoScript/Bootstrap/constants.typoscript">
+
+#### News
+[userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('news')]
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/TypoScript/Extension/News/constants.typoscript">
+#### News
+
+#### Solr
+[userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('solr')]
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/TypoScript/Extension/Solr/constants.typoscript">
+#### Solr
+
+#### cs_seo
+[userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('cs_seo')]
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/TypoScript/Extension/cs_seo/constants.typoscript">
+#### cs_seo
+
+#### Rx_Shariff
+[userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('rx_shariff')]
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/TypoScript/Extension/Rx_Shariff/constants.typoscript">
+#### Rx_Shariff
+
+

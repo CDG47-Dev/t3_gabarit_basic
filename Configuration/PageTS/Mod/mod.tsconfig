@@ -1,0 +1,12 @@
+#
+# Mod TsConfig
+# doc: https://docs.typo3.org/typo3cms/TSconfigReference/PageTsconfig/Mod/Index.html
+#
+
+
+mod.web_list{
+	#Masque de la table de contenu en mode Liste
+	table.tt_content.hideTable = 1
+	#Seulement autorisation de la création de pages ou d'actualités en mode liste
+	#allowedNewTables = pages, tx_news
+}

@@ -1,0 +1,12 @@
+#Déclaration gabarit tx_news
+tx_news.templateLayouts {
+	4 =  --div--, Gabarits
+    Cards  = Fiches Actualites
+    SimpleList = Liste simple
+	5 =  --div--, Agenda
+    EventCards = Fiches des evenements
+    AllEvents =  Liste des evenements
+	
+	
+	
+}

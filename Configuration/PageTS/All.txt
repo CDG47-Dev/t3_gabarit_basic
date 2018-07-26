@@ -1,0 +1,18 @@
+#
+# PageTS for T3_Gabarit_Basic
+#
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/PageTS/Mod/WebLayout/BackendLayouts.txt">
+
+# Add content elements
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/PageTS/Mod/Wizards/newContentElement.txt">
+
+# Extensions:
+# RTE
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/PageTS/RTE.txt">
+# News
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/PageTS/News.txt">
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/PageTS/TCEFORM.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/PageTS/TCEMAIN.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:t3_gabarit_basic/Configuration/PageTS/Mod/mod.tsconfig">

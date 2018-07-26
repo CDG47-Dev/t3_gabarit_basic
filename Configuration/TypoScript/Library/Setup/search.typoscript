@@ -1,0 +1,14 @@
+lib.search = TEXT
+[userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('solr')]
+lib.search < plugin.tx_solr_PiSearch_Search
+lib.search.view {
+        templateRootPaths {
+			100 = EXT:t3_gabarit_basic/Resources/Private/Extensions/Templates/Solr/Top/
+		}
+		partialRootPaths {
+			100 = EXT:t3_gabarit_basic/Resources/Private/Extensions/Partials/Solr/Top/
+		}
+		layoutRootPaths {
+			100 = EXT:t3_gabarit_basic/Resources/Private/Extensions/Layouts/Solr/Top/
+		}
+}

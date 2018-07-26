@@ -1,0 +1,132 @@
+{namespace n=GeorgRinger\News\ViewHelpers}
+
+<div class="news-list-view news-monthalone-list {f:format.case(value: '{settings.templateLayout}', mode: 'lower')}">
+			<f:if condition="{settings.hidePagination}">
+                <f:then>
+                  
+                  <f:for each="{news}" as="newsItem" iteration="iterator">
+                    
+                    <f:if condition="{newsItem.isEvent}">
+                      <f:then>
+                        <f:if condition="{newsItem.eventEnd -> f:format.date(format:'U')} >= {f:format.date(format:'U', date: 'now')} || {newsItem.datetime -> f:format.date(format:'U')} >= {f:format.date(format:'U', date: 'now')}">
+                          <f:then>
+                            <span id="newsevent-{newsItem.uid}">
+                              <f:render section="listItem" arguments="{newsItem: newsItem, settings:settings, iterator:iterator}" />
+                            </span>
+                            
+                          </f:then>
+                          
+                        </f:if>
+                        
+                      </f:then>
+                    </f:if>  
+                  </f:for>
+                  
+                </f:then>
+                <f:else>                  
+                  
+                  <n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit}">
+                    <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+                      <f:if condition="{newsItem.isEvent}">
+                        <f:then>
+                          <f:if condition="{newsItem.eventEnd -> f:format.date(format:'U')} >= {f:format.date(format:'U', date: 'now')} || {newsItem.datetime -> f:format.date(format:'U')} >= {f:format.date(format:'U', date: 'now')}">
+                            <f:then>
+                              <f:render section="listItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                              
+                            </f:then>
+                          </f:if>
+                        </f:then>
+                      </f:if>
+                    </f:for>
+                  </n:widget.paginate>
+                </f:else>
+              </f:if>
+</div>
+
+<f:section name="listItem">
+
+  <div class="col-md-12 events">
+      <!-- media preview element  -->
+    <f:if condition="{newsItem.mediaPreviews}">
+      <f:then>
+        <div class="news-img-wrap actusc">
+          <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+            <f:alias map="{mediaElement: '{newsItem.mediaPreviews.0}'}">
+              <f:if condition="{mediaElement.originalResource.type} == 2">
+                <f:image image="{mediaElement}" class="img-responsive" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+              </f:if>
+              <f:if condition="{mediaElement.originalResource.type} == 4">
+                <f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement}"/>
+              </f:if>
+              <f:if condition="{mediaElement.originalResource.type} == 5">
+                <f:image image="{mediaElement}" class="img-responsive" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+              </f:if>
+            </f:alias>
+          </n:link>
+        </div>
+      </f:then>
+     <f:else>
+       <f:if condition="{settings.displayDummyIfNoMedia}">
+          <div class="news-img-wrap actusc">
+            <span class="no-media-element">
+              <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                <f:image src="{settings.list.media.dummyImage}" class="img-responsive" title="" alt="" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+              </n:link>
+            </span>
+          </div>
+        </f:if>
+      </f:else>
+    </f:if>
+    
+    <f:if condition="{newsItem.eventEnd}">
+      <f:then>
+        <p>
+          <time datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}"/>
+          Du <f:format.date format='%A %d/%m/%y'>{newsItem.datetime}</f:format.date>
+          au <time datetime="{f:format.date(date:newsItem.eventEnd format:'Y-m-d')}" />
+          <f:format.date format='%A %d/%m/%y'>{newsItem.eventEnd}</f:format.date>
+        </p>
+      </f:then>
+      <f:else>
+        <p>
+          <time datetime="{f:format.date(date:newsItem.datetime, format:'%a %d/%m %y')}"/>
+          Le <f:format.date format='%A %d/%m/%y'>{newsItem.datetime}</f:format.date>
+        </p>
+      </f:else>
+    </f:if>
+    
+    <strong> <n:link newsItem="{newsItem}" settings="{settings}">{newsItem.title}</n:link></strong>
+    
+    <f:if condition="{newsItem.teaser}">
+      <f:then>
+        {newsItem.teaser -> f:format.crop(maxCharacters: '50', respectWordBoundaries:'1') -> f:format.html()}
+      </f:then>
+      <f:else>
+        {newsItem.bodytext -> f:format.crop(maxCharacters: '50', respectWordBoundaries:'1') -> f:format.html()}
+      </f:else>
+    </f:if>
+    
+    <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+      <figcaption><p class="ensavoirplus">Lire la suite</p></figcaption>
+    </n:link>
+    
+    <ul>
+      <f:if condition="{newsItem.organizer}">
+        <li><strong>
+          <f:translate key="organizer" extensionName="eventnews" />
+          </strong>: {newsItem.organizer.title}
+          <small>(uid: {newsItem.organizer.uid})</small>
+        </li>
+      </f:if>
+      <f:if condition="{newsItem.location}">
+        <li><strong>
+          <f:translate key="location" extensionName="eventnews" />
+          </strong>: {newsItem.location.title}
+          <small>(uid: {newsItem.location.uid})</small>
+        </li>
+      </f:if>
+    </ul>
+  </div>
+  
+</f:section>
+

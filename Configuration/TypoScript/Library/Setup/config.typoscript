@@ -1,0 +1,33 @@
+##############
+#### CONFIG ####
+##############
+
+config {
+    // Language Settings
+    language = fr
+    locale_all = fr_FR.UTF-8
+    htmlTag_setParams = lang="fr" dir="ltr" class="no-js"
+	metaCharset = utf-8
+
+    //Search Settings
+    index_enable = 1
+    index_externals = 1
+	
+    //Cible lien externe
+    extTarget = _blank
+	
+    # Realurl
+    tx_realurl_enable = {$config.realurl}
+	absRefPrefix = /
+	typolinkEnableLinksAcrossDomains = 1
+
+    # Set the baseurl
+    baseURL = {$themes.configuration.baseURL}
+
+	# Enable spam protection
+    spamProtectEmailAddresses = 2
+    spamProtectEmailAddresses_atSubst = {$themes.configuration.spamProtectEmailAddresses.atSubst}
+    spamProtectEmailAddresses_lastDotSubst = {$themes.configuration.spamProtectEmailAddresses.lastDotSubst}
+    headerComment = {$themes.configuration.headerComment}
+    sendCacheHeaders = 1
+}

@@ -1,0 +1,7 @@
+# =====================================================================================
+# https://github.com/dmitryd/typo3-realurl/wiki/Notes-for-Integrators
+# =====================================================================================
+config {
+    # cat=t3 gabarit_basic: basic/enable/010; type=boolean; label=RealUrl: Activer RealUrl
+    realurl = 0
+}

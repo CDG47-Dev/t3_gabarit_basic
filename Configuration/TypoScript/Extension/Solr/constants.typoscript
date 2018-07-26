@@ -1,0 +1,28 @@
+[applicationContext = Development/Docker, Production/Docker]
+    themes.configuration.features.solrBaseCoreName = core
+[global]
+
+plugin {
+    tx_solr {
+		# cat=theme,advanced/search/; type=string; label= Protocole 
+		index.queue.pages.frontendDataHelper.scheme = https
+		
+        solr {
+			# cat=theme,advanced/search/; type=string; label= Host
+            host = 
+			# cat=theme,advanced/search/; type=string; label= Port
+            port = 
+        }
+		
+		templateMenu{
+			view{
+			   # cat=theme,advanced/search/; type=string; label= templateRootPath 
+			   templateRootPath = EXT:t3_gabarit_basic/Resources/Private/Templates/Solr/
+			   # cat=theme,advanced/search/; type=string; label= layoutRootPath 
+			   layoutRootPath = EXT:t3_gabarit_basic/Resources/Private/Layouts/Solr/
+			   # cat=theme,advanced/search/; type=string; label= partialRootPath 
+			   partialRootPath  = EXT:t3_gabarit_basic/Resources/Private/Partials/Solr/
+			}
+		}
+    }
+}

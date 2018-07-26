@@ -1,0 +1,32 @@
+##############
+### PAGE   ###
+##############
+
+page{
+	fluidtemplate{
+		templateRootPath = EXT:t3_gabarit_basic/Resources/Private/Templates/Page/
+		layoutRootPath = EXT:t3_gabarit_basic/Resources/Private/Layouts/Page/
+		partialRootPath = EXT:t3_gabarit_basic/Resources/Private/Partials/Page/
+	
+	}
+	
+	theme {
+	
+		# cat=bootstrap package: basic/160/101; type=options[Default=, Fixed Top=top, Fixed Bottom=bottom]; label=Navigation Type
+		navigationtype = top
+	
+	 	# cat=theme,basic/160/011; type=string; label=Copyright Text: Texte affiché pour la zone Copyright
+		copyright.text = <a href="http://www.cdg47.fr">CDG47</a>
+		
+		language {
+			 # cat=bootstrap package: basic/168/language_enable; type=boolean; label=LanguageSection: Enable to display the LanguageSection at bottom
+			enable = 0
+
+		}
+	}
+
+	favicon {
+	   # cat=theme,basic/111/100; type=string; label=Favicon
+	   file = EXT:t3_gabarit_basic/Resources/Public/Icons/favicon.ico
+	}	
+}

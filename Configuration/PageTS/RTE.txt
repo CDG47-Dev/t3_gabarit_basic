@@ -1,0 +1,49 @@
+#############
+#### RTE ####
+#############
+RTE {
+    config {
+        tt_content {
+            bodytext {
+                types {
+                    text {
+                        preset = t3_gabarit_basic
+                    }
+                    textcolumn {
+                        preset = t3_gabarit_basic
+                    }
+                    texticon {
+                        preset = t3_gabarit_basic
+                    }
+                    textmedia {
+                        preset = t3_gabarit_basic
+                    }
+                    textpic {
+                        preset = t3_gabarit_basic
+                    }
+                    textteaser {
+                        preset = t3_gabarit_basic
+                    }
+                    panel {
+                        preset = t3_gabarit_basic
+                    }
+                }
+            }
+        }
+        tx_bootstrappackage_accordion_item {
+            bodytext {
+                preset = t3_gabarit_basic
+            }
+        }
+        tx_bootstrappackage_tab_item {
+            bodytext {
+                preset = t3_gabarit_basic
+            }
+        }
+		tx_news_domain_model_news{
+			bodytext {
+				preset = t3_gabarit_basic
+			}
+		}
+    }
+}

@@ -1,0 +1,18 @@
+themes{
+	#Paramètre du champ recherche	
+	search {
+
+		#cat=theme,Recherche/160/010; type=string; label=Label Champ Recherche: Titre au dessus du moteur de recherche (laisser vide pour ne rien avoir):
+		defaultInputLabel =
+
+		#cat=theme,Recherche/160/011; type=string; label= Placeholder du champ recherche
+		defaultInputValue = Saisir votre recherche
+
+		#cat=theme,Recherche/160/012; type=string; label= Label du bouton recherche
+		defaultSubmitLabel = Rechercher sur tout le site
+
+		#cat=theme,Recherche/160/013; type=string; label= Texte du bouton recherche:
+		defaultSubmitValue = <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+	}
+
+}

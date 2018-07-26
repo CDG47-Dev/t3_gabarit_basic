@@ -1,0 +1,5 @@
+page {
+	includeJSFooter {
+		weather = EXT:t3_gabarit_basic/Resources/Public/js/weather.js
+	}
+}

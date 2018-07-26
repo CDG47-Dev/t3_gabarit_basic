@@ -1,0 +1,21 @@
+# ==============================================
+# FE-Plugin configuration for EXT:news
+# ==============================================
+plugin.tx_news {
+
+	view {
+                # cat=plugin.tx_news/file; type=string; label=Path to template root (FE)
+				templateRootPath = EXT:t3_gabarit_basic/Resources/Private/Templates/News/
+				# cat=plugin.tx_news/file; type=string; label=Path to template partials (FE)
+                partialRootPath = EXT:t3_gabarit_basic/Resources/Private/Partials/News/
+				# cat=plugin.tx_news/file; type=string; label=Path to template layout (FE)
+                layoutRootPath = EXT:t3_gabarit_basic/Resources/Private/Layouts/News/
+    }
+	
+    settings {
+        # cat=plugin.tx_news/file; type=string; label=Path to CSS file
+        cssFile =
+	}	
+		
+
+}

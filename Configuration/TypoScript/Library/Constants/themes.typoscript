@@ -1,0 +1,95 @@
+# customsubcategory=logo=Logo
+# customsubcategory=site=Site
+# customsubcategory=footerlogo=Logo Footer
+
+themes.configuration{
+
+	# cat=theme,basic/site; type=string; label= Header Comment
+	headerComment = This website is based on t3_gabarit_basic
+
+	# cat=theme,basic/site; type=int+; label= Startsite page uid
+	pages.startsite = 1
+	
+	# cat=theme,basic/site; type=string; label= Site Name
+	siteName = Vitis	
+	
+	# cat=theme,basic/site; type=string; label= Url / Domain
+	baseURL = http://www.example.com	
+	
+	# cat=theme,basic/site; type=string; label= Matomo id
+	analytics.id  = 0
+	
+	
+	responsive {
+	        # cat=theme,basic/footerlogo/100; type=string; label=Img Responsive: Leave blank to use website title from template instead
+	        file = EXT:t3_gabarit_basic/Resources/Public/Images/responsive.png
+	        # cat=theme,basic/footerlogo/120; type=int+; label=Height: The image will not be resized!
+	        height = 64
+	        # cat=theme,basic/footerlogo/130; type=int+; label=Width: The image will not be resized!
+	        width = 64
+	        # cat=theme,basic/footerlogo/140; type=string; label=Alternative text: Text of the alt attribute of the logo image
+	        alt = Ce site web s'adapte aux différents supports.
+
+	}
+
+	logo {
+	        # cat=theme,basic/logo/100; type=string; label=Logo: Leave blank to use website title from template instead
+	        file = EXT:t3_gabarit_basic/Resources/Public/Images/logo.png
+	        # cat=theme,basic/logo/110; type=string; label=Logo Inverted: Leave blank to use website title from template instead
+	        fileInverted = EXT:bootstrap_package/Resources/Public/Images/BootstrapPackageInverted.png
+	        # cat=theme,basic/logo/120; type=int+; label=Height: The image will not be resized!
+	        height = 129
+	        # cat=theme,basic/logo/130; type=int+; label=Width: The image will not be resized!
+	        width = 240
+	        # cat=theme,basic/logo/140; type=string; label=Alternative text: Text of the alt attribute of the logo image (default: "<website title> logo")
+	        alt =
+	        # cat=theme,basic/logo/150; type=string; label=Link title: Title of the link attribute of the logo image
+	        linktitle =
+	        # cat=theme,basic/logo/150; type=string; label=Collectivité: Nom de la collectivité
+	        collectivite =	Vitis		
+	}
+	
+	#Paramètre des liens Accès Directs
+	directnav {
+		# cat=t3 gabarit_basic: basic/310/010; type=string; label=Nom du menu: Nom du menu affiché comme entête et bouton en frontend
+		name = 	Accès Direct
+		# cat=t3 gabarit_basic: basic/310/011; type=string; label=Dossiers Uid: Uid des dossiers contenant des sous-pages à afficher (séparé par des virgules)
+		navdir = 0
+		# cat=t3 gabarit_basic: basic/310/012; type=boolean; label=Hors Menu: Inclure ou non les pages hors menu
+		notinmenu = 1
+		# cat=t3 gabarit_basic: basic/310/013; type=string; label=Exclusion: Uid des pages à exclure (séparé par des virgules)
+		excludelist = 133,134 
+	}
+}
+#############################################
+# Theme constants [advanced]
+#############################################
+# customsubcategory=search= Search configuration
+# cat=theme,advanced/search/; type=int+; label= Search target page id
+themes.configuration.features.searchTargetPage = 71
+
+# customsubcategory=news= News configuration
+# cat=theme,advanced/news/; type=int+; label= News default detail page id
+themes.configuration.features.newsDefaultDetailPid = 42
+
+# customsubcategory=spamProtect= SpamProtect
+# Spam protect email addresses constants
+#############################################
+# cat=theme,expert/spamProtect/; type=string; label= E-Mail spam protection: @ replacement
+themes.configuration.spamProtectEmailAddresses.atSubst = @<span style="display:none;">remove-this.</span>
+# cat=theme,expert/spamProtect/; type=string; label= E-Mail spam protection: Last dot replacement
+themes.configuration.spamProtectEmailAddresses.lastDotSubst = .<span style="display:none;">remove-this.</span>
+
+
+#############################################
+# Theme constants [Expert]
+#############################################
+# customsubcategory=development_mode= Development Mode
+# cat=theme,expert/development_mode/; type=options[Development Mode=1,Production Mode=0]; label= Dev Mode: (Production = Open site for search robots + compress-concat CSS and JS files)
+themes.configuration.isDevelopment = Development Mode
+
+# customsubcategory=solr= Solr search
+# cat=theme,expert/solr/; type=options[0,1]; label= Enable solr search
+themes.configuration.features.enableSolr = 1
+# cat=theme,expert/solr/; type=string; label= Base solr core name (no spaces): Will be combined with language ISO code in solr path
+themes.configuration.features.solrBaseCoreName = core
